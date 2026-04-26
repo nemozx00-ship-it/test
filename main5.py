@@ -1,7 +1,10 @@
 import streamlit as st
-st.write('hello')
-st.title('')
-pass = st.text.input(label: 'password: ', type='password')
-a=st.button('login')
-#tạo input copy đoạn văn bất kyf.
-#nhấn nút button, đếm số từ đoạn văn đã copy.
+st.set_page_config(page_title="Login Page")
+st.markdown("LOGIN")
+username = st.text_input("Username:")
+password = st.text_input("Password:", type="password")
+if st.button("LOGIN"):
+    if username == "admin" and password == "12345":
+        st.success("Đăng nhập thành công!")
+    else:
+        st.error("Sai tên đăng nhập hoặc mật khẩu!")
